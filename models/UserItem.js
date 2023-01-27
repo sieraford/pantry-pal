@@ -36,4 +36,4 @@ UserItem.init(
   }
 );
 
-module.exports = ProductTag;
+module.exports = UserItem;

@@ -7,7 +7,13 @@ router.get('/', (req, res) => {
     attributes: ['id', 'name'],
     include: Item,
   })
-    .then((allCategoryData) => res.status(200).json(allCategoryData))
+    .then((allCategoryData) => {
+      // console.log(allCategoryData);
+      // const allCats = allCategoryData.map((cat) => cat.get({ plain: true }))
+      // console.log(allCats);
+      // res.render('add', allCats)
+      res.status(200).json(allCategoryData)
+    })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);

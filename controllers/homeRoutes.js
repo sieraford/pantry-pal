@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Item } = require('../models');
+const { Item, Category } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
@@ -19,6 +19,18 @@ router.get('/', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/add', async (req, res) => {
+  try {
+    const allCategoryData = await Category.findAll({});
+    console.log(allCategoryData);
+    const allCats = allCategoryData.map((cat) => cat.get({ plain: true }))
+    console.log(allCats);
+    res.render('add', { allCats })
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
 
 // router.get('/project/:id', async (req, res) => {
 //   try {

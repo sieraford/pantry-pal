@@ -14,21 +14,8 @@ Category.hasMany(Item, {
     foreignKey: 'category_id',
 });
 
-// items belong to many users
-Item.belongsToMany(User, {
-    through: UserItem,
-    foreignKey: 'item_id',
-});
-
-// users belong to many food items
-User.belongsToMany(Item, {
-    through: UserItem,
-    foreignKey: 'user_id',
-});
-
 module.exports = {
     Category,
     Item,
-    User,
-    UserItem,
+    User
 };

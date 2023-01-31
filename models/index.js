@@ -1,7 +1,6 @@
 const Category = require('./Category');
 const Item = require('./Item');
 const User = require('./User');
-const UserItem = require('./UserItem');
 
 // each product belongs to a category
 Item.belongsTo(Category, {

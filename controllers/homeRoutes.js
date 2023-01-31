@@ -1,18 +1,11 @@
 const router = require('express').Router();
-const { Item, User } = require('../models');
+const { Item } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
   try {
     // Get all projects and JOIN with user data
-    const itemData = await Item.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
+    const itemData = await Item.findAll({});
 
     // Serialize data so the template can read it
     const items = itemData.map((item) => item.get({ plain: true }));

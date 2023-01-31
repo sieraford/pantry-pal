@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Item, Category, User, UserItem } = require('../../models');
+const { Item, Category, User } = require('../../models');
 
 // The `/api/items` endpoint
 
@@ -13,10 +13,6 @@ router.get('/', async (req, res) => {
           model: Category,
           attributes: ["name"]
       },
-        {
-          model: User,
-          through: UserItem, 
-        },
       ],
     });
     console.log(itemData)
@@ -43,7 +39,6 @@ router.get('/:id', async (req, res) => {
       },
         {
           model: User,
-          through: UserItem, 
         },
       ],
     });
@@ -68,10 +63,6 @@ router.post('/', async (req, res) => {
           model: Category,
           attributes: ["name"]
       },
-        {
-          model: User,
-          through: UserItem, 
-        },
       ],
     });
     console.log(newItem)

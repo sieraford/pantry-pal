@@ -21,7 +21,7 @@ Item.init(
             allowNull: false,
         },
         expiration_date: {
-            type: DataTypes.DATE,
+            type: DataTypes.DATEONLY,
             allowNull: false,
         },
         category_id: {

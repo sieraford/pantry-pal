@@ -1,10 +1,11 @@
 const router = require('express').Router();
 const { Item, Category } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // The `/api/items` endpoint
 
 // get all items
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   console.log("All Items Get Route Start")
   try {
     const itemData = await Item.findAll({
@@ -28,7 +29,7 @@ router.get('/', async (req, res) => {
   
 
 // get one item
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
   console.log("Single Items Get Route Start")
   try {
     const singleItem = await Item.findByPk(req.params.id, {
@@ -51,7 +52,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // create a new food item
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   console.log("Item Post Route Start")
   try {
     const newItem = await Item.create(req.body, {
@@ -73,7 +74,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
   try {
     const itemToUpdate = await Item.update(req.body, {
       where: {
@@ -90,7 +91,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
   const itemToDelete = await Item.findByPk(req.params.id)
   Item.destroy({
     where: {

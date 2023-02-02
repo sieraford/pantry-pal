@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
+    // Get all food items and JOIN with user data
     const itemData = await Item.findAll({});
 
     // Serialize data so the template can read it
@@ -20,59 +20,19 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
-router.get('/add', async (req, res) => {
+router.get('/add', withAuth, async (req, res) => {
   try {
     const allCategoryData = await Category.findAll({});
     console.log(allCategoryData);
     const allCats = allCategoryData.map((cat) => cat.get({ plain: true }))
     console.log(allCats);
-    res.render('add', { allCats })
+    res.render('add', { allCats,
+      logged_in: req.session.logged_in 
+    })
   } catch (err) {
     res.status(500).json(err);
   }
 })
-
-// router.get('/project/:id', async (req, res) => {
-//   try {
-//     const projectData = await Project.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['name'],
-//         },
-//       ],
-//     });
-
-//     const project = projectData.get({ plain: true });
-
-//     res.render('project', {
-//       ...project,
-//       logged_in: req.session.logged_in
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
-// // Use withAuth middleware to prevent access to route
-// router.get('/profile', withAuth, async (req, res) => {
-//   try {
-//     // Find the logged in user based on the session ID
-//     const userData = await User.findByPk(req.session.user_id, {
-//       attributes: { exclude: ['password'] },
-//       include: [{ model: Project }],
-//     });
-
-//     const user = userData.get({ plain: true });
-
-//     res.render('profile', {
-//       ...user,
-//       logged_in: true
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route

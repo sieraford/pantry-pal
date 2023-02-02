@@ -2,28 +2,31 @@
     <h2>Add New Item</h2>
 </div>
 
-<form class="form signup-form">
+<form class="form add-item-form">
     <div class="form-group">
-        <label for="name-signup">Name:</label>
-        <input class="form-input" type="text" id="name-signup" />
+        <label for="item-name">Name:</label>
+        <input class="form-input" type="text" id="item-name"/>
     </div>
     <div class="form-group">
-        <label for="email-signup">Quantity:</label>
-        <input class="form-input" type="text" id="email-signup" />
+        <label for="quantity-of">Quantity:</label>
+        <input class="form-input" type="number" id="quantity"/>
     </div>
     <div class="form-group">
-        <label for="password-signup">Expiration Date:</label>
-        <input class="form-input" type="password" id="password-signup" />
+        <label for="expiration-date">Expiration Date:</label>
+        <input class="form-input" id="expiration-date" placeholder="MM-DD-YYYY"/>
     </div>
     <div class="form-group">
-        <label for="password-signup">Category Name:</label>
-        <select class="form-input" type="password" id="password-signup">
+        <label for="category-selection">Please Select a Category:</label>
+        <select class="form-input" id="category">
+            {{!-- all categories created dynamically in the dropdown menu --}}
                 {{#each allCats as |category|}}
-                    <option>{{category.name}}</option>
+                    <option value={{category.id}}>{{category.name}}</option>
                 {{/each}}
         </select>
     </div>
     <div class="form-group">
-        <button class="btn btn-primary" type="submit">Add</button>
+        <button class="btn btn-primary" type="submit" id="add-button">Add</button>
     </div>
 </form>
+
+<script src="./js/add.js"></script>

@@ -2,18 +2,18 @@
     <h2>Add New Item</h2>
 </div>
 
-<form class="form add-item-form">
+<form data-parsley-validate="" class="form add-item-form">
     <div class="form-group">
         <label for="item-name">Name:</label>
-        <input class="form-input" type="text" id="item-name"/>
+        <input class="form-input" type="text" id="item-name" required=""/>
     </div>
     <div class="form-group">
         <label for="quantity-of">Quantity:</label>
-        <input class="form-input" type="number" id="quantity"/>
+        <input class="form-input" type="number" id="quantity" required=""/>
     </div>
     <div class="form-group">
         <label for="expiration-date">Expiration Date:</label>
-        <input class="form-input" type="date" id="expiration-date"/>
+        <input class="form-input" type="date" id="expiration-date" required=""/>
     </div>
     <div class="form-group">
         <label for="category-selection">Please Select a Category:</label>

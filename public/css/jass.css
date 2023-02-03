@@ -356,7 +356,8 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   font-size: 16px;
   color: #1a1a1a;
 }
@@ -377,10 +378,12 @@ h1 {
 
 h2 {
   font-size: 2rem;
+  color: #000000;
 }
 
 h3 {
   font-size: 1.75rem;
+  color: #000000;
 }
 
 h4 {
@@ -859,6 +862,37 @@ a:hover {
   padding-bottom: 1.625rem;
 }
 
+.pantry-landing {
+  background-image: url('../img/jason-leung-jWU9FpLW7fI-unsplash.jpg');
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.landing-title {
+  font-size: 180px;
+  font-weight: bolder;
+  text-shadow: 3px 3px 2px #ffffff;
+}
+
+.landing-slogan {
+  font-size: 60px;
+  text-shadow: 2px 2px 2px #ffffff;
+}
+
+.landing-buttons {
+  margin: 0 auto;
+  width: 15vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .text-uppercase {
   text-transform: uppercase !important;
 }
@@ -995,6 +1029,11 @@ a:hover {
 .btn.btn-sm {
   font-size: 0.85rem;
   padding: 0.3rem 0.9rem;
+}
+
+.btn.btn-md {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .btn.btn-lg {
@@ -1136,6 +1175,7 @@ form label,
 form .form-label {
   display: inline-block;
   font-size: 1.2rem;
+  color: #000000;
   margin: 0.625rem 0 0.25rem 0.3rem;
 }
 
@@ -1159,8 +1199,8 @@ form [type='radio'] {
   display: inline-block;
 }
 
-label form [type='checkbox'], label
-form [type='radio'] {
+label form [type='checkbox'],
+label form [type='radio'] {
   display: inline-block;
 }
 

@@ -1,16 +1,16 @@
 <!-- Loop over each object in the items array -->
-{{#each items as |item| }}
-<div class="row mb-4 project">
-  <div class="col-md-5">
-    <h2>
-      <!-- Render item names and details -->
-      <h3>{{item.name}}</h3>
-    </h2>
-    
-    <ul>
+{{#each items as |item|}}
+  <div class='row mb-4 project'>
+    <div class='col-md-5'>
+      <h2>
+        <!-- Render item names and details -->
+        <h3>{{item.name}}</h3>
+      </h2>
+
+      <ul>
         <li>Quantity: {{item.quantity}}</li>
         <li>Expires on {{format_date item.expiration_date}}</li>
-    </ul>
+      </ul>
+    </div>
   </div>
-</div>
 {{/each}}

@@ -33,7 +33,9 @@ router.get('/add', withAuth, async (req, res) => {
 });
 
 router.get('/landing', (req, res) => {
-  res.render('landing');
+  res.render('landing', {
+    landing_page: true,
+  });
 });
 
 router.get('/login', (req, res) => {

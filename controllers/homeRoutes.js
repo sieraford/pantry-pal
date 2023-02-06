@@ -32,6 +32,10 @@ router.get('/add', withAuth, async (req, res) => {
   }
 });
 
+router.get('/categories', withAuth, async (req, res) => {
+  res.render('categories');
+})
+
 router.get('/landing', (req, res) => {
   res.render('landing', {
     landing_page: true,

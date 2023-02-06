@@ -1,5 +1,4 @@
-header,
-.project:not(:last-child) {
+header {
   border-bottom: 1px solid #ccc;
 }
 
@@ -18,8 +17,29 @@ header,
   text-decoration: underline;
 }
 
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
+.background {
+  background: rgba(76, 175, 80, 0.6);
+  background-image: url('../img/jason-leung-jWU9FpLW7fI-unsplash.jpg');
+  height: 100vh;
+  background-size: cover;
+}
+
+.items {
+  background: rgba(241, 244, 241, 0.6);
+}
+
+.title {
+  font-family: 'Righteous', cursive;
+  font-size: 4em;
+  color: #0b2c5a;
+  text-decoration: none;
+}
+
+.nav-text {
+  font-size: 1.25em;
+  color: #0b2c5a;
+}
+
+nav {
+  justify-content: space-between;
 }

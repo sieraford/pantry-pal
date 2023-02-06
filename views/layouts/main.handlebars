@@ -6,26 +6,29 @@
     <title>Pantry Pal</title>
     <link rel='stylesheet' href='/css/jass.css' />
     <link rel='stylesheet' href='/css/style.css' />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <div class='flex-column justify-space-around'>
+    <div class='background flex-column justify-space-around'>
       <header class='display-flex justify-space-between align-center p-2'>
         {{#if landing_page}}
           <h1></h1>
         {{else}}
           <a href='/'>
-            <h1>Pantry Pal</h1>
+            <h1 class="title">Pantry Pal</h1>
           </a>
         {{/if}}
-        <nav>
+        <nav class="nav-text">
           {{#if logged_in}}
             <!-- if the user is logged in, display the add item and logout links in the nav bar header -->
-            <a href='/categories'>Add Category</a>
+            <a class="nav-text" href='/categories'>Add Category</a>
             |
-            <a href='/add'>Add Item</a>
+            <a class="nav-text" href='/add'>Add Item</a>
             |
-            <button class='no-button' id='logout'>Logout</button>
+            <button class='nav-text no-button' id='logout'>Logout</button>
           {{/if}}
         </nav>
       </header>

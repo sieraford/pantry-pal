@@ -11,9 +11,13 @@
   <body>
     <div class='flex-column justify-space-around'>
       <header class='display-flex justify-space-between align-center p-2'>
-        <a href='/'>
-          <h1>Pantry Pal</h1>
-        </a>
+        {{#if landing_page}}
+          <h1></h1>
+        {{else}}
+          <a href='/'>
+            <h1>Pantry Pal</h1>
+          </a>
+        {{/if}}
         <nav>
           {{#if logged_in}}
             <!-- if the user is logged in, display the add item and logout links in the nav bar header -->

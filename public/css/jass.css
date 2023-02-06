@@ -429,7 +429,6 @@ a {
 
 a:hover {
   color: #065b83;
-  text-decoration: underline;
 }
 
 /* HEIGHT / WIDTH UTILS */
@@ -875,22 +874,27 @@ a:hover {
 }
 
 .landing-title {
-  font-size: 180px;
+  font-family: 'Righteous', cursive;
+  font-size: 80px;
   font-weight: bolder;
+  color: #0b2c5a;
   text-shadow: 3px 3px 2px #ffffff;
+  text-align: center;
 }
 
 .landing-slogan {
-  font-size: 60px;
+  font-size: 30px;
+
   text-shadow: 2px 2px 2px #ffffff;
+  text-align: center;
 }
 
 .landing-buttons {
   margin: 0 auto;
-  width: 15vw;
+  max-width: 800px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .text-uppercase {
@@ -1555,6 +1559,12 @@ label form [type='radio'] {
   }
   .align-content-center-md {
     align-content: center;
+  }
+  .title-text-md {
+    font-size: 180px;
+  }
+  .slogan-text-md {
+    font-size: 60px;
   }
 }
 

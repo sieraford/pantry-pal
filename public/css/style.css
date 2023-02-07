@@ -43,9 +43,3 @@ header {
 nav {
   justify-content: space-between;
 }
-
-.list-items {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-}
